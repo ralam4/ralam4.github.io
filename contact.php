@@ -1,13 +1,13 @@
 <?php
 
-if(isset($_POST['email'])) {
+if(isset($_GET['submit'])) {
    // Prepare the email
 $to = 'ralam70@gmail.com';
 
-$name = $_POST['name'];
-$mail_from = $_POST['email'];
+$name = $_GET['name'];
+$mail_from = $_GET['email'];
    $subject = 'Message sent from projectx5w1h';
-   $message = $_POST['message'];
+   $message = $_GET['message'];
 
 $header = "From: $name <$mail_from>";
 
