@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_POST['submit'])) {
+if(isset($_POST['email'])) {
    // Prepare the email
 $to = 'ralam70@gmail.com';
 
