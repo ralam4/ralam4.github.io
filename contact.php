@@ -1,22 +1,31 @@
 <?php
 
-if(isset($_POST["submit"])) {
-   // Prepare the email
-$to = "ralam70@gmail.com";
+$headersep = "\r\n";
+$header = "From: $name <$email>" . $headersep . "Reply-To: $name <$email> . $headersep";
+$email = $_POST['email'];
+$subject="Your subject here";
+$message = "From: $name\n\nMessage: $message\n\nEmail: $email\n\nTelephone: $phone";
+$to ='ralam70@gmail.com';
 
-$name = $_POST["name"];
-$mail_from = $_POST["email"];
-   $subject = 'Message sent from Project 5W1H';
-   $message = $_POST["message"];
-
-$header = "From: $name <$mail_from>";
-
-   // Send it
-   $sent = mail($to, $subject, $message, $header);
-   if($sent) {
-   echo "Your message has been sent successfully!";
-   } else {
-   echo "Sorry, your message could not send.";
-   }
+if (!empty ($_POST['email']) && ($_POST['message'])) {
+  mail($to, $subject, $message, $header);
+echo "Thank you $name, your message has been received.";
+exit;
 }
+
+if ( (empty ($_POST['email'])) && (empty ($_POST['message'])) ) {
+echo "ERROR, you did not fill in the <b>Email</b> and the <b>message</b> body.";
+exit;
+}
+
+elseif (empty ($_POST['email'])) {
+echo "ERROR, you did not fill in your Email address.";
+exit;
+}
+
+elseif (empty ($_POST['message'])) {
+echo "ERROR, you did not fill in the message body.";
+exit;
+}
+
 ?>
