@@ -543,7 +543,7 @@
 			}
 
 				ul.icons li:last-child {
-					padding-right: 0;
+					padding-right: 0 !important;
 				}
 
 				ul.icons li .icon {
@@ -1623,10 +1623,9 @@
 				}
 
 		}
-		/* Footer gallery
+ Footer gallery
 
 			#footer2 {
-				position: sticky;
 				padding: 1em 0 0 0;
 				background-color: #1d242a;
 				text-align: center;
@@ -1701,4 +1700,4 @@
 						padding: 3em 2em 1em 2em ;
 					}
 
-				} */
+				}
